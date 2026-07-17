@@ -7,7 +7,7 @@ function App() {
   const [watchList, setWatchList] = useState([]);
   const fetchWatchList = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/media');
+        const response = await fetch('https://watchiiii.onrender.com/api/media');
         if (!response.ok) {
           throw new Error('Failed to fetch watch list');
         }

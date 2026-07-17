@@ -1,6 +1,6 @@
 export default function MediaList({ watchList, setWatchList }) {
     async function handleDelete(id) {
-        await fetch(`http://localhost:5000/api/media/${id}`, {
+        await fetch(`https://watchiiii.onrender.com/api/media/${id}`, {
             method: 'DELETE',
         }).then((response) => {
             if (!response.ok) {

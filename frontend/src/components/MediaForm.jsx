@@ -7,7 +7,7 @@ export default function MediaForm({fetchWatchList}) {
         e.preventDefault();
         console.log({ title, category, status });
         try{
-            const response = await fetch('http://localhost:5000/api/media', {
+            const response = await fetch('https://watchiiii.onrender.com/api/media', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

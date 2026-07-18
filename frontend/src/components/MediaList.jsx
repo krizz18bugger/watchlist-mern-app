@@ -36,7 +36,7 @@ export default function MediaList({ watchList, setWatchList }) {
       <div className="content-box">
           <span className="card-title">{media.title}</span>
           <p className="card-content">
-              Status: <select className="status-select" value={media.category} onChange={(e) => {handleUpdate(media._id, e.target.value)}}>
+              Status: <select className="status-select" value={media.status} onChange={(e) => {handleUpdate(media._id, e.target.value)}}>
                 <option value="Watching">Watching</option>
                 <option value="Completed">Completed</option>
                 <option value="Plan to Watch">Plan to Watch</option>

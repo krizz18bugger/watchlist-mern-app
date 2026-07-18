@@ -85,7 +85,7 @@ button:active {
   color: black;
 }
 
-input, option{
+input, form option{
   width: calc(100% - 10px);
   padding: 8px;
   margin-bottom: 20px;
@@ -109,7 +109,7 @@ input::placeholder {
   color: #9b725b;
 }
 
-select {
+form select {
   font-family: Arial, Helvetica, sans-serif;
   width: calc(100% - 10px);
   padding: 8px;
@@ -122,7 +122,7 @@ select {
   color: #ff5900;
 }
 
-option:focus {
+form option:focus {
   border: 1px solid #66da4300;
   border-bottom: 1px solid #ff5900;
   background-color: transparent;
@@ -242,5 +242,14 @@ option:focus {
   font-size: 0.8em;
   font-weight: 900;
   color: rgb(4, 193, 250);
+}
+
+.status-select {
+  color: #f7f4f2;
+}
+
+.status-select option {
+  background-color: rgba(4, 193, 250, 0.732);
+  color: #f7f4f2;
 }
  

@@ -40,6 +40,17 @@ app.delete('/api/media/:id', async (req, res) => {
         res.status(500).json({ message: 'Error deleting item', err });
     }
 });
+app.put('/api/media/:id', async (req, res) => {
+    try{
+        const {id}= req.params;
+        const {status}= req.body;
+        const updatedMedia = await Media.findByIdAndUpdate(id, {status}, {new: true});
+        res.status(200).json(updatedMedia);
+    }
+    catch (err){
+        res.status(500).json({ message: 'Error updating item', err });
+    }
+});
 const port=process.env.PORT;
 mongoose.connect(process.env.MONGO_URI).then(()=>{
     console.log("Connected to MongoDB");

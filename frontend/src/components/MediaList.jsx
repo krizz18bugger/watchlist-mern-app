@@ -12,6 +12,22 @@ export default function MediaList({ watchList, setWatchList }) {
             console.error('Error deleting item:', error);
         });
     }
+    async function handleUpdate(id, newStatus){
+        await fetch(`https://watchiiii.onrender.com/api/media/${id}`, {
+            method: 'PUT',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({status: newStatus})
+        }).then((res)=>{
+            if(!res.ok){
+                throw new Error('Failed to update status');
+            }
+            else{
+                setWatchList(watchList.map((media) => media._id === id ? {...media, status: newStatus} : media));
+            }
+        }).catch((error)=>{
+            console.error('Error updating status:', error);
+        });
+    }
     return (
         <div className="media-list">
         {watchList.map((media) =>
@@ -20,7 +36,11 @@ export default function MediaList({ watchList, setWatchList }) {
       <div className="content-box">
           <span className="card-title">{media.title}</span>
           <p className="card-content">
-              Status: {media.status} 
+              Status: <select className="status-select" value={media.category} onChange={(e) => {handleUpdate(media._id, e.target.value)}}>
+                <option value="Watching">Watching</option>
+                <option value="Completed">Completed</option>
+                <option value="Plan to Watch">Plan to Watch</option>
+                </select> 
           </p>
           <button className="see-more" onClick={() => handleDelete(media._id)}>
               Delete

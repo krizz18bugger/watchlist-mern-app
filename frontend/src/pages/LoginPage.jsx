@@ -1,5 +1,5 @@
-import LoginForm from '../components/Login';
-import Card from '../uikits/background';
+import LoginForm from './../components/Login';
+import Card from './../uikits/background';
 import { useEffect } from 'react';
 
 export default function LoginPage(){

@@ -1,10 +1,10 @@
-import MediaForm from './../components/MediaForm';
-import MediaList from './../components/MediaList';
-import Card from './../uikits/background';
-import CardBanner from './../uikits/banner';
+import MediaForm from './../components/MediaForm.jsx';
+import MediaList from './../components/MediaList.jsx';
+import Card from './../uikits/background.jsx';
+import CardBanner from './../uikits/banner.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Navbar from './../components/Navbar';
+import Navbar from './../components/Navbar.jsx';
 
 export default function Watchlist(){
   const [watchList, setWatchList] = useState([]);

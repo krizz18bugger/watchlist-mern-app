@@ -20,7 +20,7 @@ const LoginForm = () => {
         localStorage.setItem('token', data.token);
         navigate('/watchlist');
       }
-      else if(res.status=400){
+      else if(res.status===400){
         setAlertMsg(res.message);
       }
     }

@@ -1,7 +1,7 @@
 import MediaForm from '../components/MediaForm.jsx';
 import MediaList from '../components/MediaList.jsx';
-import Card from '../uikits/background.jsx';
-import CardBanner from '../uikits/banner.jsx';
+import Card from '../temp_folder/background.jsx';
+import CardBanner from '../temp_folder/banner.jsx';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar.jsx';

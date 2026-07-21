@@ -15,13 +15,13 @@ const LoginForm = () => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, password})
       });
+      const data = await res.json();
       if(res.ok){
-        const data = await res.json();
         localStorage.setItem('token', data.token);
         navigate('/watchlist');
       }
       else if(res.status===400){
-        setAlertMsg(res.message);
+        setAlertMsg(data.message);
       }
     }
   return (

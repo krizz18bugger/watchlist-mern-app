@@ -30,7 +30,7 @@ font-size: 2rem;
 }
 
 /* From Uiverse.io by aadium */ 
-form {
+.media-form {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,7 +44,7 @@ form {
   margin: 0 auto;
 }
 
-form::before {
+.media-form::before {
   content: '';
   background-image: linear-gradient(45deg, #ff0000, 
   #ffb700);
@@ -85,7 +85,7 @@ button:active {
   color: black;
 }
 
-input, form option{
+.media-form input, .media-form option{
   width: calc(100% - 10px);
   padding: 8px;
   margin-bottom: 20px;
@@ -98,18 +98,18 @@ input, form option{
   transition: 0.2s;
 }
 
-input:focus {
+.media-form input:focus {
   border: 1px solid #66da4300;
   border-bottom: 1px solid #ff5900;
   background-color: transparent;
   color: white;
 }
 
-input::placeholder {
+.media-form input::placeholder {
   color: #9b725b;
 }
 
-form select {
+.media-form select {
   font-family: Arial, Helvetica, sans-serif;
   width: calc(100% - 10px);
   padding: 8px;
@@ -122,7 +122,7 @@ form select {
   color: #ff5900;
 }
 
-form option:focus {
+.media-form option:focus {
   border: 1px solid #66da4300;
   border-bottom: 1px solid #ff5900;
   background-color: transparent;
@@ -137,6 +137,10 @@ form option:focus {
   margin-top: 20px;
   width: 300px;
   margin: 0 auto;
+}
+
+.forget-password{
+  font-size: large;
 }
 
 /* From Uiverse.io by Smit-Prajapati */ 
@@ -253,3 +257,12 @@ form option:focus {
   color: #f7f4f2;
 }
  
+/* Login page */
+.login-page, .signup-page{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}

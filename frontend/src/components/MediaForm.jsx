@@ -3,6 +3,7 @@ export default function MediaForm({fetchWatchList}) {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('Anime');
     const [status, setStatus] = useState('Plan to watch');
+    const token = localStorage.getItem('token');
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log({ title, category, status });
@@ -10,7 +11,7 @@ export default function MediaForm({fetchWatchList}) {
             const response = await fetch('https://watchiiii.onrender.com/api/media', {
                 method: 'POST',
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json", 'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({ title, category, status })
                 });
@@ -28,7 +29,7 @@ export default function MediaForm({fetchWatchList}) {
     }
 }
     return (
-        <form>
+        <form className="media-form">
             <input type="text" placeholder="Title of the show or movie..." value={title} onChange={(e)=>setTitle(e.target.value)} />
             <select value={category} onChange={(e)=>setCategory(e.target.value)}>
                 <option value="Anime">Anime</option>

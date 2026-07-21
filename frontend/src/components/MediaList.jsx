@@ -1,7 +1,9 @@
 export default function MediaList({ watchList, setWatchList }) {
+    const token = localStorage.getItem('token');
     async function handleDelete(id) {
         await fetch(`https://watchiiii.onrender.com/api/media/${id}`, {
             method: 'DELETE',
+            headers: {'Authorization': `Bearer ${token}`}
         }).then((response) => {
             if (!response.ok) {
                 throw new Error('Failed to delete item');
@@ -15,7 +17,7 @@ export default function MediaList({ watchList, setWatchList }) {
     async function handleUpdate(id, newStatus){
         await fetch(`https://watchiiii.onrender.com/api/media/${id}`, {
             method: 'PUT',
-            headers: {"Content-Type": "application/json"},
+            headers: {"Content-Type": "application/json", 'Authorization': `Bearer ${token}`},
             body: JSON.stringify({status: newStatus})
         }).then((res)=>{
             if(!res.ok){

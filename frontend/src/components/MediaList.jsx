@@ -39,9 +39,9 @@ export default function MediaList({ watchList, setWatchList }) {
           <span className="card-title">{media.title}</span>
           <p className="card-content">
               Status: <select className="status-select" value={media.status} onChange={(e) => {handleUpdate(media._id, e.target.value)}}>
+                <option value="Plan to Watch">Plan to Watch</option>
                 <option value="Watching">Watching</option>
                 <option value="Completed">Completed</option>
-                <option value="Plan to Watch">Plan to Watch</option>
                 </select> 
           </p>
           <button className="see-more" onClick={() => handleDelete(media._id)}>

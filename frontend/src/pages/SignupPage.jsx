@@ -1,5 +1,5 @@
 import SignupForm from '../components/Signup.jsx';
-import Card from '../temp_folder/background.jsx';
+import Card from '../ui_kits/background.jsx';
 
 export default function SignupPage(){
     return (

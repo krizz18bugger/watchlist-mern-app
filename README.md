@@ -40,7 +40,7 @@ This project includes a complete authentication and authorization system:
 
 Environment variables required for authentication:
 - `MONGO_URI` — your MongoDB connection string.
-- `JWT_SECRET` — secret used to sign JWTs (keep this private).
+- `JWT_SECRET_KEY` — secret used to sign JWTs (keep this private).
 - Optionally: `JWT_EXPIRES_IN` — token expiry duration (e.g., `1h`, `7d`).
 
 

@@ -1,4 +1,4 @@
-import SignupForm from "../components/Signup";
+import SignupForm from '../components/Signup';
 import Card from '../uikits/background';
 
 export default function SignupPage(){
